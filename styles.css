@@ -1,0 +1,27 @@
+* {
+    font-family: "helvetica neue";
+    color: #111;
+    font-size: 1.2em;
+}
+
+body {
+    background-color: rgb(246,246,246);
+}
+
+span {
+    margin-left: .1em;
+}
+
+#content {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.exposition:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.exposition:active {
+    color: red;
+}
