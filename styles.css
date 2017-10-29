@@ -13,15 +13,15 @@ span {
 }
 
 #content {
-    width: 800px;
+    width: 720px;
     margin: 0 auto;
 }
 
-.exposition:hover {
+.head:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.exposition:active {
+.head:active {
     color: red;
 }
