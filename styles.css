@@ -8,13 +8,21 @@ body {
     background-color: rgb(246,246,246);
 }
 
-span {
-    margin-left: .1em;
+ul {
+    list-style-position:inside;
+    margin: 0;
+}
+li {
+    font-size: 0.6em;
 }
 
 #content {
-    width: 720px;
+    width: 680px;
     margin: 0 auto;
+}
+
+.project {
+    margin-right: .3em;
 }
 
 .head:hover {
@@ -25,3 +33,11 @@ span {
 .head:active {
     color: red;
 }
+
+.centered > * {
+    display:block;
+    margin: 0 auto;
+}
+
+
+
