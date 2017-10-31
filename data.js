@@ -1,57 +1,12 @@
-// the main effect
-const tweenHtml = (trans, getFrames) => {
-  trans
-    .tween("html", (d, i, all) => {
-      let thisEle = d3.select(all[i])
-      let getHtmlAt =
-        d3
-        .scaleQuantize()
-        .range(getFrames(d))
-      return t => {
-        return thisEle.html(getHtmlAt(t))
-      }
-    })
+const WIDTH = 720
+const tagged = {
+  EMBARASSING: "EMBARASSING",
+  INPROGRESS: "INPROGRESS",
+  MEH: "MEH",
+  MUSIC: "MUSIC",
+  CODE: "CODE",
 }
 
-
-// utility zoneeeeee
-const decay = (original, isCandidate = _.constant(true)) => {
-  var frames = [original]
-  var toDestroy = original.slice() // get rid of mutation
-
-  for (var i = toDestroy.filter(isCandidate).length; i > 0; i--) {
-    var candidateIndices = []
-
-    toDestroy.forEach(function(d, i) {
-      if (isCandidate(d)) {
-        candidateIndices.push(i)
-      }
-    })
-
-    var nowDestroyingIdx = _.sample(candidateIndices)
-      // toDestroy = dash.withoutOne(toDestroy, nowDestroyingIdx)
-    toDestroy.splice(nowDestroyingIdx, 1)
-    frames.push(toDestroy.slice())
-  }
-
-  return frames
-}
-
-const chars2string = arr => arr.join("")
-const strDecay = s => decay(s.split("")).map(chars2string)
-const centered = content => "<div class='centered'>" + content + "</div>"
-
-
-// combination zoneeee
-const wrap = (opener, frames, closer) => frames.map(s => opener + s + closer)
-const parallel = (...wrapped) => _.zip(...wrapped).reverse().map(chars2string)
-
-// api zoneeee
-const group = parallel
-const tag = (opener, str, closer) => wrap(opener, strDecay(str), closer)
-
-
-// data!!!!
 const assets = {
   acceptable: {
     iframe: '<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1254360733/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://asteriskellipsis.bandcamp.com/album/acceptable">Acceptable by (*...)</a></iframe>'
@@ -80,26 +35,32 @@ const assets = {
   fm: {
     img: 'https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FScreen%20Shot%202017-10-29%20at%209.00.34%20PM.png?1509325465090',
     download: 'https://s3-us-west-2.amazonaws.com/lh00000000-misc/PUBLIC/Fuck+Me.pdf'
+  },
+  badly: {
+    tweets: [
+      '<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">{<br>&quot;origin&quot;: &quot;point&quot;,<br>&quot;verb&quot;: [&quot;give life&quot;]<br>}</p>&mdash; Bad Bots, Done Badly (@badbotsdonebad) <a href="https://twitter.com/badbotsdonebad/status/875241653736439809?ref_src=twsrc%5Etfw">June 15, 2017</a></blockquote>',
+      '<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">{<br>&quot;origin&quot;: [&quot;#adjective# #other# #verb#&quot;],<br>&quot;verb&quot;: &quot;#adjective#&quot;,<br>&quot;adjective&quot;: &quot;number&quot;<br>}</p>&mdash; Bad Bots, Done Badly (@badbotsdonebad) <a href="https://twitter.com/badbotsdonebad/status/900246570737819648?ref_src=twsrc%5Etfw">August 23, 2017</a></blockquote>',
+      '<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">{<br>&quot;origin&quot;: [&quot;#other# #noun#&quot;],<br>&quot;adjective&quot;: &quot;be&quot;,<br>&quot;verb&quot;: &quot;#preposition# #adjective# #verb#&quot;,<br>&quot;noun&quot;: [&quot;world&quot;],<br>&quot;verb&quot;: &quot;day you&quot;<br>}</p>&mdash; Bad Bots, Done Badly (@badbotsdonebad) <a href="https://twitter.com/badbotsdonebad/status/872666092547842048?ref_src=twsrc%5Etfw">June 8, 2017</a></blockquote>'
+    ]
+  },
+  chatter: {
+    embed: '<script src="https://gist.github.com/lh00000000/2265eda569a10fcf6647d020be28bd53.js"></script>'
+  },
+  nonono: {
+    img: 'https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FscreenshotPNG.png?1509422640544',
+    webstore: 'https://chrome.google.com/webstore/detail/no-no-no/nggpkbejpjoikollcocnfahnghbcihlk'
+  },
+  invisibleCat: {
+    video: '<blockquote class="twitter-video" data-lang="en"><p lang="en" dir="ltr">trying to make an invisible cat that wiggles more and more violently if u don&#39;t pet it <a href="https://twitter.com/hashtag/Arduino?src=hash&amp;ref_src=twsrc%5Etfw">#Arduino</a> <a href="https://t.co/iHcQB3ouuj">pic.twitter.com/iHcQB3ouuj</a></p>&mdash; looming howl (@lh00000000) <a href="https://twitter.com/lh00000000/status/844034374987382784?ref_src=twsrc%5Etfw">March 21, 2017</a></blockquote>',
+
   }
 }
 
-const WIDTH = 680
-
-const tagged = {
-  EMBARASSING: "EMBARASSING",
-  INPROGRESS: "INPROGRESS",
-  MEH: "MEH",
-  MUSIC: "MUSIC",
-  CODE: "CODE",
-}
-
-const thingsICouldBe = [
-  "an internet user",
-  "a lover of keyboard shortcuts",
-  "a fan of chamomile tea"
-]
-
 const projectIndex = {
+  invisibleCat: {
+    id: "invisibleCat",
+
+  },
   acceptable: {
     id: "acceptable",
     head: group(
@@ -107,10 +68,24 @@ const projectIndex = {
       tag("<span>", " is an album of music.", "</span>")
     ),
     guts: group(
-      [centered(assets.acceptable.iframe)], ["<br />"],
+      [`<div class="centered">${assets.acceptable.iframe}</div>`], ["<br />"],
       tag("<span>", "it was self-recorded in 2011 in my parents' house.", "</span>"), ["<br />"]
+    )
+  },
+  nonono: {
+    id: "nonono",
+    head: group(
+      tag("<b>", "NO NO NO", "</b>"),
+      tag("<span>", " is a chrome extension.", "</span>")
     ),
-    tagged: [tagged.embarassing, tagged.music]
+    guts: group(
+      [`<a href="${assets.nonono.webstore}" target="_blank"><img src="${assets.nonono.img}" width=${WIDTH} /></a>`],
+      tag("<span>", " it negates all of the text you read.", "</span>"),
+      tag("<span>", " it can be downloaded on the ", "</span>"),
+      tag(`<a href="${assets.nonono.webstore}" target="_blank">`, "chrome web store", "</a>"),
+      tag("<span>", ". it was created in 2017.", "</span>"),
+      ["<br />"]
+    )
   },
   m: {
     id: "m",
@@ -121,8 +96,8 @@ const projectIndex = {
     guts: group(
       [assets.m.iframe],
       tag("<span>", " it won some sort of local competition.", "</span>"),
-      tag("<span>", " i was very proud.", "</span>"), ["<br />"]
-    )
+      tag("<span>", " the composer was very proud.", "</span>"), ["<br />"]
+    ),
   },
   kms: {
     id: "kms",
@@ -143,7 +118,7 @@ const projectIndex = {
       tag("<span>", " is a book of poems.", "</span>")
     ),
     guts: group(
-      [`<a href="${assets.fm.download}"><img src="${assets.fm.img}" width=${WIDTH} /></a>`],
+      [`<a href="${assets.fm.download}" target="_blank"><img src="${assets.fm.img}" width=${WIDTH} /></a>`],
       tag("<span>", " it was written in 2013.", "</span>"),
       tag("<span>", " and can be downloaded ", "</span>"),
       tag(`<a href="${assets.fm.download}" target="_blank">`, "here.", "</a>"), ["<br />"]
@@ -172,51 +147,73 @@ const projectIndex = {
       tag("<span>", " is a python library for markov chain chatbots.", "</span>")
     ),
     guts: group(
+      // tag('<pre class="hljs python"><code class="python">', assets.chatter.snippet, "</code></pre>"),
+      // [assets.chatter.embed],
       ["<br />"],
       tag("<span>", ' it is implemented in pure python and can be found on ', "</span>"),
-      tag(
-        '<a href="https://github.com/lh00000000/chatter" target="_blank">',
-        "github",
-        "</a>"),
+      tag('<a href="https://github.com/lh00000000/chatter" target="_blank">', "github", "</a>"),
       tag("<span>", '. ', "</span>"), ["<br />"],
     )
+  },
+  badly: {
+    id: "badly",
+    head: group(
+      tag("<b>", "bad bots done badly", "</b>"),
+      tag("<span>", " is a twitter bot.", "</span>")
+    ),
+    guts: group(
+      ["<br />"],
+      ["<div class='centered'>" + _.sample(assets.badly.tweets) + "</div>"],
+      tag("<span>", ' it tweets tracery code which can be used to generate other twitter bots. ', "</span>"),
+      tag("<span>", ' the code can be deployed via ', "</span>"),
+      tag('<a href="https://cheapbotsdonequick.com/" target="_blank">', "quick bots, done cheap", "</a>"),
+      tag("<span>", '. it was created during itp camp 2017. ', "</span>"),
+      ["<br />"]
+    ),
+    after: () => {
+      twttr.widgets.load(document.getElementById("#chatter"))
+    }
   },
   bio: {
     id: "bio",
     head: group(
       tag("<b>", "luming hao", "</b>"),
-      tag("<span>", ` is ${_.sample(thingsICouldBe)}.`, "</span>")
+      tag("<span>",
+        " is " +
+        _.sample([
+          "an internet user",
+          "a lover of keyboard shortcuts",
+          "a fan of chamomile tea"
+        ]) + ".",
+        "</span>")
     ),
     guts: group(
       ["<br />"],
       tag("<span>", " they enjoy many websites, such as: ", "</span>"),
-      wrap(
-        "<ul>",
-        decay([{
-          text: "the twitter !",
-          href: "https://twitter.com/lh00000000"
-        }, {
-          text: "the github !",
-          href: "https://github.com/lh00000000"
-        }, {
-          text: "the instagram !",
-          href: "https://www.instagram.com/lh00000000"
-        }, {
-          text: "the soundcloud !",
-          href: "https://soundcloud.com/stardotdotdot"
-        }, {
-          text: "the are.na !",
-          href: "https://www.are.na/luming-hao"
-        }, {
-          text: "the glitch !",
-          href: "https://glitch.com/@lh00000000"
-        }])
-        .map(frameOfObjs =>
-          frameOfObjs
+      stack(
+        _.shuffle(
+          [{
+            text: "the twitter !",
+            href: "https://twitter.com/lh00000000"
+          }, {
+            text: "the github !",
+            href: "https://github.com/lh00000000"
+          }, {
+            text: "the instagram !",
+            href: "https://www.instagram.com/lh00000000"
+          }, {
+            text: "the soundcloud !",
+            href: "https://soundcloud.com/stardotdotdot"
+          }, {
+            text: "the are.na !",
+            href: "https://www.are.na/luming-hao"
+          }, {
+            text: "the glitch !",
+            href: "https://glitch.com/@lh00000000"
+          }]
           .map(_.template('<li><a href="<%= href %>"><%= text %></a></li>'))
-          .join("")
-        ),
-        "</ul>"),
+        )
+      ).map(frame => "<ul>" + frame.join("") + "</ul>"),
       tag("<span>", "they currently live in ", "</span>"),
       tag("<a href='http://guysamerican.com/' target='_blank'>", "new york", "</a>"),
       tag("<span>", ", where they are employed by ", "</span>"),
@@ -226,86 +223,13 @@ const projectIndex = {
   }
 }
 const orderedProjectDatums = [
-  projectIndex.acceptable,
+  projectIndex.badly,
   projectIndex.m,
+  projectIndex.nonono,
   projectIndex.kms,
-  projectIndex.fm,
-  projectIndex.sandals,
+  // projectIndex.fm,
+  // projectIndex.sandals,
   projectIndex.chatter,
+  projectIndex.acceptable,
   projectIndex.bio
 ]
-
-
-
-// d3 zone!
-const update = (datums) => {
-  const projects = d3.select("#content")
-    .selectAll(".project")
-    .data(datums, _.iteratee("id"))
-
-  projects.exit()
-    .transition()
-    .duration(1000)
-    .style("opacity", 0)
-    .remove()
-
-  const projectsEnter = projects.enter()
-    .append("span")
-    .attr("class", "project")
-    .attr("id", _.iteratee("id"))
-
-  const headsEnter = projectsEnter
-    .append("span")
-    .attr("class", "head")
-
-  const gutsEnter = projectsEnter
-    .append("span")
-    .attr("class", "guts")
-
-  headsEnter
-    .transition()
-    .delay((d, i) => i * 500)
-    .duration(1000)
-    .call(tweenHtml, _.iteratee("head"))
-
-  headsEnter
-    .on("click", (d, i, all) => {
-      let selector = "#" + d.id + " > span.guts"
-      if (!document
-        .querySelector(selector)
-        .hasChildNodes()) {
-        d3
-          .select(selector)
-          .transition()
-          .duration(1000)
-          .call(tweenHtml, _.iteratee("guts"))
-      }
-    })
-}
-
-update(orderedProjectDatums)
-
-// header zoneeee
-var i = 0
-setInterval(() => {
-  i = (i + 1) % orderedProjectDatums.length
-  document.title = _.last(orderedProjectDatums[i].head)
-    .replace(/<\/?[^>]+(>|$)/g, "")
-    .replace(/\./g, "")
-    .match(/is .*/g)
-}, 1000.0 / 60)
-
-// document.addEventListener("keyup", () => {
-//   update(
-//       [
-//         {
-//           id: "newlyAdded",
-//           head:
-//             group(
-//               tag("<span>", "this would be cool", "</span>")
-//               )
-//         }
-
-//       ]
-//       )
-// })

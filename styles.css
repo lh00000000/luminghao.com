@@ -1,7 +1,25 @@
-* {
-    font-family: "helvetica neue";
-    color: #111;
-    font-size: 1.2em;
+body {
+  font-family: "helvetica neue";
+  font-size: 3em;
+}
+
+@media only screen and (max-width: 720px) {
+    #content {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    #content {
+        width: 720px;
+        margin: 0 auto;
+    }
+}
+
+/* bottom scroll breather room */
+#content {
+  margin-bottom: 80px;
 }
 
 body {
@@ -16,10 +34,15 @@ li {
     font-size: 0.6em;
 }
 
-#content {
-    width: 680px;
-    margin: 0 auto;
+/* embed stuff*/
+/*pre code {
+  font-size: 0.8em;
 }
+*/
+blockquote.twitter-tweet {
+  font-size: 0.6em;
+}
+
 
 .project {
     margin-right: .3em;
@@ -30,14 +53,11 @@ li {
     cursor: pointer;
 }
 
-.head:active {
-    color: red;
-}
-
 .centered > * {
     display:block;
     margin: 0 auto;
 }
+
 
 
 
