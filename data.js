@@ -271,10 +271,11 @@ const projectIndex = {
       tag("<a href='http://guysamerican.com/' target='_blank'>", "new york", "</a>"),
       tag("<span>", ", where they are employed by ", "</span>"),
       tag("<a href='https://foursquare.com/lh00000000/list/clubmate-nyc' target='_blank'>", "foursquare", "</a>"),
-    tag("<span>", " to create one hyperspecific slack channel a day. they also created ", "</span>"),
+    tag("<span>", " to create one hyperspecific slack channel a day. ", "</span>"),
       tag("<b>", "this website", "</b>"),
+    tag("<span>", " features information about their accomplishments. ", "</span>"),
       tag("<span>", ': ', "</span>"), [`<div class="centered">${assets.meta.browser}</div>`],
-      tag("<span>", ' whose source can be found on ', "</span>"),
+      tag("<span>", " it's source can be found on ", "</span>"),
       tag('<a href="https://github.com/lh00000000/not-on-github-yet" target="_blank">', "github.", "</a>"), ["<br />"]
     )
   },
