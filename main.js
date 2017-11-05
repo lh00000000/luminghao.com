@@ -74,8 +74,8 @@ const update = (datums) => {
       .call(
         tweenHtml,
         _.iteratee("head"),
-        () => play.random.RH.forwards(),
-        () => play.random.LH.forwards()
+        player.RH.forwards,
+        player.LH.forwards
       )
 
   headsEnter
@@ -95,16 +95,15 @@ const update = (datums) => {
       if (!document
         .querySelector(selector)
         .hasChildNodes()) {
-        console.log("opening")
         d3.select(selector)
           .transition()
             .ease(EASE)
             .duration(1000)
-            .call(tweenHtml, d => {
-              return d.guts
-            },
-            () => play.random.RH.forwards(),
-            () => play.random.LH.forwards()
+            .call(
+              tweenHtml,
+              _.iteratee("guts"),
+              player.RH.forwards,
+              _.once(player.LH.forwards)
             )
             .on("end", d => {
               if (d.after) { d.after() }
@@ -115,11 +114,13 @@ const update = (datums) => {
           .transition()
             .ease(EASE)
             .duration(1000)
-            .call(tweenHtml, d => {
-              return d.guts.slice().reverse()
-            },
-            () => play.random.RH.backwards(),
-            () => play.random.LH.backwards()
+            .call(
+              tweenHtml,
+              d => {
+                return d.guts.slice().reverse()
+              },
+              player.RH.backwards,
+              player.LH.backwards
             )
             .on("end", () => {
               d3.select(`${selector} > *`).remove()

@@ -4,10 +4,10 @@ const pianoKey = src => {
   })
 
   return {
-    play: _.debounce(vol => {
+    play: vol => {
       h.volume(vol)
       h.play()
-    }, 50)
+    }
   }
 }
 
@@ -45,18 +45,21 @@ const LH = {
   }
 }
 
+const debouncedPlay = (keyLookup, minVol, maxVol) =>
+  _.debounce(
+    () => _.sample(_.values(keyLookup))
+      .play( _.random(minVol, maxVol)),
+    9
+  )
 
-
-const play = {
-  random: {
-    RH: {
-      forwards: () => _.sample(_.values(RH.forwards)).play(  _.random(0.3, 0.6)),
-      backwards: () => _.sample(_.values(RH.backwards)).play(  _.random(0.4, 0.6))
-    },
-    LH: {
-      forwards: () => _.sample(_.values(LH.forwards)).play(_.random(0.7, 1.0)),
-      backwards: () => _.sample(_.values(LH.backwards)).play(_.random(0.8, 1.0)),
-    },
-  }
+const player = {
+  RH: {
+    forwards: debouncedPlay(RH.forwards, 0.1,  0.2),
+    backwards: debouncedPlay(RH.backwards, 0.2, 0.3)
+  },
+  LH: {
+    forwards: debouncedPlay(LH.forwards, 0.5, 0.6),
+    backwards: debouncedPlay(LH.backwards, 0.7, 0.9)
+  },
 }
 
