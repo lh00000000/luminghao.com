@@ -1,4 +1,22 @@
-const tweenHtml = (trans, getFrames) => {
+// const EASE = d3.easeExp
+// const EASE = d3.easeElastic
+// const EASE = d3.easeBounce
+const EASE = d3.easeLinear
+// const EASE = d3.easeSin
+// const EASE = d3.easeQuad
+// const EASE = d3.easePoly
+// const EASE = d3.easeCircle
+// const EASE = d3.easeExp
+// const EASE = d3.easeBack
+const DURATION = 2000
+const DELAY = 50
+
+const tweenHtml = (
+  trans,
+  getFrames,
+  onFrameChange = _.identity,
+  onFinalFrame = _.identity
+) => {
   trans
     .tween("html", (d, i, all) => {
       let thisEle = d3.select(all[i])
@@ -7,7 +25,19 @@ const tweenHtml = (trans, getFrames) => {
         .scaleQuantize()
         .range(getFrames(d))
       return t => {
-        return thisEle.html(getHtmlAt(t))
+        let oldHtml = thisEle.html()
+        let newHtml = getHtmlAt(t)
+        let finalHtml = getHtmlAt(1)
+
+        if (oldHtml != newHtml) {
+          onFrameChange()
+        }
+
+        if (newHtml == finalHtml && oldHtml != newHtml) {
+          onFinalFrame()
+        }
+
+        return thisEle.html(newHtml)
       }
     })
 }
@@ -19,9 +49,9 @@ const update = (datums) => {
 
   projects.exit()
     .transition()
-    .duration(1000)
-    .style("opacity", 0)
-    .remove()
+      .duration(1000)
+      .style("opacity", 0)
+      .remove()
 
   const projectsEnter = projects.enter()
     .append("span")
@@ -38,9 +68,15 @@ const update = (datums) => {
 
   headsEnter
     .transition()
-    .delay((d, i) => i * 500)
-    .duration(1000)
-    .call(tweenHtml, _.iteratee("head"))
+      .ease(EASE)
+      .duration(DURATION)
+      .delay((d, i) => i * DELAY)
+      .call(
+        tweenHtml,
+        _.iteratee("head"),
+        () => play.random.RH.forwards(),
+        () => play.random.LH.forwards()
+      )
 
   headsEnter
     .on("mousedown", d => {
@@ -48,30 +84,46 @@ const update = (datums) => {
         .style("background-color", "black")
         .style("color", "black")
     })
-    .on("click", d => {
+    .on("mouseup", d => {
       d3.select("#" + d.id)
         .style("background-color", "transparent")
         .style("color", "inherit")
+    })
+    .on("click", d => {
 
-      let selector = "#" + d.id + " > span.guts"
+      let selector = `#${d.id} span.guts`
       if (!document
         .querySelector(selector)
         .hasChildNodes()) {
-        d3
-          .select(selector)
+        console.log("opening")
+        d3.select(selector)
           .transition()
-          .duration(1000)
-          .call(tweenHtml, _.iteratee("guts"))
-          .on("end", d => {
-            if (d.after) { d.after() }
-          })
+            .ease(EASE)
+            .duration(1000)
+            .call(tweenHtml, d => {
+              return d.guts
+            },
+            () => play.random.RH.forwards(),
+            () => play.random.LH.forwards()
+            )
+            .on("end", d => {
+              if (d.after) { d.after() }
+            })
 
       } else {
-        d3
-          .select(selector)
+        d3.select(selector)
           .transition()
-          .duration(1000)
-          .call(tweenHtml, d => d.guts.reverse())
+            .ease(EASE)
+            .duration(1000)
+            .call(tweenHtml, d => {
+              return d.guts.slice().reverse()
+            },
+            () => play.random.RH.backwards(),
+            () => play.random.LH.backwards()
+            )
+            .on("end", () => {
+              d3.select(`${selector} > *`).remove()
+            })
       }
     })
 }
