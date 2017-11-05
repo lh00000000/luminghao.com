@@ -125,6 +125,15 @@ blockquote.twitter-tweet, blockquote.twitter-video {
   text-align: center;
 }
 
-#fillMeWithMarkovText {
-  padding: 0px 20px 0px 20px;
+
+#fillMeWithMarkovText  {
+  max-width: 95%;
+}
+
+#markovTextHolder {
+  height: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
