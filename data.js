@@ -244,28 +244,28 @@ const projectIndex = {
       ["<br />"],
       tag("<span>", " they enjoy many websites, such as: ", "</span>"),
       stack(
-        _.shuffle(
-          [{
-            text: "the twitter!",
-            href: "https://twitter.com/lh00000000"
-          }, {
-            text: "the github!",
-            href: "https://github.com/lh00000000"
-          }, {
-            text: "the instagram!",
-            href: "https://www.instagram.com/lh00000000"
-          }, {
-            text: "the soundcloud!",
-            href: "https://soundcloud.com/stardotdotdot"
-          }, {
-            text: "the are.na!",
-            href: "https://www.are.na/luming-hao"
-          }, {
-            text: "the glitch!",
-            href: "https://glitch.com/@lh00000000"
-          }]
-          .map(_.template('<li><a href="<%= href %>" target="_blank"><%= text %></a></li>'))
-        )
+        [{
+          text: "the twitter!",
+          href: "https://twitter.com/lh00000000"
+        }, {
+          text: "the github!",
+          href: "https://github.com/lh00000000"
+        }, {
+          text: "the instagram!",
+          href: "https://www.instagram.com/lh00000000"
+        }, {
+          text: "the soundcloud!",
+          href: "https://soundcloud.com/stardotdotdot"
+        }, {
+          text: "the are.na!",
+          href: "https://www.are.na/luming-hao"
+        }, {
+          text: "the glitch!",
+          href: "https://glitch.com/@lh00000000"
+        }
+        ]
+        .map(_.template('<li><a href="<%= href %>" target="_blank"><%= text %></a></li>'))
+        .concat(['<li><a href="mailto:lh00000000@gmail.com">the gmail!</a></li>'])
       ).map(frame => "<ul>" + frame.join("") + "</ul>"),
       tag("<span>", "they currently live in ", "</span>"),
       tag("<a href='http://guysamerican.com/' target='_blank'>", "new york", "</a>"),
