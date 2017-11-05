@@ -72,8 +72,8 @@ const assets = {
   meta: {
     browser: `<div class="fakeBrowser">
     <div class="fakeNavBar">
-        <i></i><i></i><i></i>
-        <input value="luminghao.com" disabled />
+        <i onclick="player.RH.forwards()"></i><i onclick="player.RH.backwards()"></i><i onclick="player.LH.backwards()"></i>
+        <input value="${window.location.href}" disabled />
     </div>
 
     <div class="fakeBrowser-container">
