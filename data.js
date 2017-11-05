@@ -328,8 +328,7 @@ const projectIndex = {
       tag("<span>", " is a python library for a trie.", "</span>"),
     ),
     guts: group(
-      ["<br />"],
-      tag("<span>", " tries are very fun", "</span>"),
+      tag("<span>", " tries are very fun ", "</span>"),
       tag("<i>", "and", "</i>"),
       tag("<span>", " useful. it can be found on ", "</span>"),
       tag('<a href="https://github.com/lh00000000/smol-trie-py" target="_blank">', "github", "</a>"),
