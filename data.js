@@ -170,31 +170,44 @@ const projectIndex = {
       tag("<span>", " is a python library for markov chain chatbots.", "</span>")
     ),
     guts: group(
-      ["<br />"],
-      tag("<div id='fillMeWithMarkovText'>", "", "</div>"),
+      tag("<div id='markovTextHolder'><div id='fillMeWithMarkovText'>", "", "</div></div>"),
       tag("<span>", ' it is implemented in pure python and can be found on ', "</span>"),
       tag('<a href="https://github.com/lh00000000/chatter" target="_blank">', "github", "</a>"),
       tag("<span>", '. ', "</span>"), ["<br />"],
     ),
     after: () => {
-      let texts = _($("span:not(:has(:has(*)))"))
-        .map("textContent")
-        .filter(text => !text.startsWith("is a") && !text.startsWith(" is a"))
-        .map(text => text.replace(".", ""))
-        .filter(text => text.length > 0)
-        .value()
-      d3.select("#fillMeWithMarkovText")
-        .transition()
-        .ease(EASE)
-        .duration(1000)
-        .call(tweenHtml, d => group(
-          ...(_.range(3).map(i =>
-            tag(
-              i == 0 ? "<samp>🤖: " : "<br /><samp>🤖: ",
-              markovSpeak(markovMake(texts), 8),
-              "</samp>")
-          ))
-        ))
+      let rewriteExample = () => {
+        let getTexts = () =>
+          _($("span:not(:has(:has(*)))"))
+          .map("textContent")
+          .filter(text => !text.startsWith("is a") && !text.startsWith(" is a"))
+          .map(text => text.replace(".", ""))
+          .filter(text => text.length > 0)
+          .value()
+
+        let displayMarkov = (markovText) =>
+          d3.select("#fillMeWithMarkovText")
+            .transition()
+            .ease(EASE)
+            .duration(1000)
+            .call(tweenHtml, d =>
+              tag(
+                i == 0 ? "<samp>🤖: " : "<samp>🤖: ",
+                markovText,
+                "</samp>"
+              )
+            )
+
+        if (!d3.select("#fillMeWithMarkovText").empty()) {
+          displayMarkov(markovSpeak(markovMake(getTexts()), 12))
+        }
+      }
+
+      rewriteExample()
+      setInterval(
+        rewriteExample,
+        5000
+      )
     }
   },
   badly: {
