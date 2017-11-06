@@ -342,23 +342,25 @@ const projectIndex = {
       ["<br />"]
     )
   }
-
 }
+
 const orderedProjectDatums = [
-  projectIndex.badly,
-  projectIndex.chatter,
-  projectIndex.invisibleCat,
-  projectIndex.m,
   projectIndex.nonono,
+  projectIndex.chatter,
   projectIndex.kidding,
+  projectIndex.badly,
   projectIndex.kms,
+  projectIndex.invisibleCat,
   projectIndex.lake,
   projectIndex.kale,
-  projectIndex.fm,
-  projectIndex.sandals,
-  projectIndex.acceptable,
-  projectIndex.pyexec,
-  projectIndex.trie,
-  projectIndex.ALLCAPS,
-  projectIndex.bio
+  // projectIndex.acceptable
+  // projectIndex.m
+  // projectIndex.fm
+  // projectIndex.sandals
+  // projectIndex.pyexec
+  // projectIndex.trie
+  // projectIndex.ALLCAPS
+  // projectIndex.collective
+
+  projectIndex.bio,
 ]
