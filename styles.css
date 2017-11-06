@@ -94,14 +94,17 @@ blockquote.twitter-tweet, blockquote.twitter-video {
 /* red button*/
 .fakeBrowser i:nth-child(1) {background-color: rgb(255, 86, 79)}
 .fakeBrowser i:nth-child(1):hover {background-color: rgb(255, 20, 25)}
+.fakeBrowser i:nth-child(1):active {background-color: rgb(100, 20, 25)}
 
 /* yellow button*/
 .fakeBrowser i:nth-child(2) {background-color: rgb(255, 183, 42)}
 .fakeBrowser i:nth-child(2):hover {background-color: rgb(230, 175, 42)}
+.fakeBrowser i:nth-child(2):active {background-color: rgb(157, 112, 26)}
 
 /* green button*/
 .fakeBrowser i:nth-child(3) {background-color: rgb(37, 198, 58)}
 .fakeBrowser i:nth-child(3):hover {background-color: rgb(10, 225, 10)}
+.fakeBrowser i:nth-child(3):active {background-color: rgb(16, 85, 26)}
 
 .fakeBrowser input {
   font-size: 0.75em;
