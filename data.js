@@ -329,6 +329,18 @@ const projectIndex = {
       [assets.kidding.iframe],
       tag("<span>", 'it lacks sufficient breath opportunities in the french horn part. it was written in 2015.', "</span>"), ["<br />"]
     )
+  },
+  collective: {
+    id: "collective",
+    head: group(
+      tag("<b>", "collective_unconscious", "</b>"),
+      tag("<span>", " is a python library for interacting with the collective unconscious.", "</span>")
+    ),
+    guts: group(
+      tag("<span>", ' first contact was made in 2016. the results were disappointing. more information can be found on ', "</span>"),
+      tag('<a href="https://github.com/lh00000000/collective_unconscious" target="_blank">', "github", "</a>"),
+      ["<br />"]
+    )
   }
 
 }
