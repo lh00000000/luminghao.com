@@ -1,16 +1,4 @@
-const WIDTH = 720
-const tagged = {
-  EMBARASSING: "EMBARASSING",
-  INPROGRESS: "INPROGRESS",
-  MEH: "MEH",
-  MUSIC: "MUSIC",
-  CODE: "CODE",
-}
-
 const assets = {
-  cred: {
-    minibrowser: `https://codepen.io/4esnog/pen/PNmvNO`
-  },
   acceptable: {
     iframe: '<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1254360733/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://asteriskellipsis.bandcamp.com/album/acceptable">Acceptable by (*...)</a></iframe>'
   },

@@ -1,15 +1,4 @@
-// const EASE = d3.easeExp
-// const EASE = d3.easeElastic
-// const EASE = d3.easeBounce
 const EASE = d3.easeLinear
-// const EASE = d3.easeSin
-// const EASE = d3.easeQuad
-// const EASE = d3.easePoly
-// const EASE = d3.easeCircle
-// const EASE = d3.easeExp
-// const EASE = d3.easeBack
-const DURATION = 2000
-const DELAY = 50
 
 const tweenHtml = (
   trans,
@@ -69,8 +58,8 @@ const update = (datums) => {
   headsEnter
     .transition()
       .ease(EASE)
-      .duration(DURATION)
-      .delay((d, i) => i * DELAY)
+      .duration(2000)
+      .delay((d, i) => i * 50)
       .call(
         tweenHtml,
         _.iteratee("head"),

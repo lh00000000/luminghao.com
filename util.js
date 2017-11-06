@@ -26,6 +26,5 @@ const countsToBag = countLookup =>
       arr.concat(Array(pair[1]).fill(pair[0])),
       [])
 
-const inIFrame = () => {
-  return window.frameElement ? true : false
-}
+// check if you're currently being displayed in an iframe
+const inIFrame = () => window.frameElement ? true : false
