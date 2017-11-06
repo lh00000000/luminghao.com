@@ -233,7 +233,9 @@ const projectIndex = {
       tag("<span>", " features information about their accomplishments: ", "</span>"),
       [`<div class="centered">${assets.meta.browser}</div>`],
       tag("<span>", " it's source can be found on ", "</span>"),
-      tag('<a href="https://github.com/lh00000000/lh00000000.github.io" target="_blank">', "github.", "</a>"), ["<br />"]
+      tag('<a href="https://github.com/lh00000000/lh00000000.github.io" target="_blank">', "github", "</a>"),
+      tag("<span>", ". ", "</span>"),
+      ["<br />"]
     )
   },
   invisibleCat: {
