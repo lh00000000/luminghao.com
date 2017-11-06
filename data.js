@@ -91,7 +91,7 @@ const projectIndex = {
       tag("<span>", " is a chrome extension.", "</span>")
     ),
     guts: group(
-      [`<a href="${assets.nonono.webstore}" target="_blank"><img src="${assets.nonono.img}" width=${WIDTH} /></a>`],
+      [`<a href="${assets.nonono.webstore}" target="_blank"><img src="${assets.nonono.img}" width="100%" /></a>`],
       tag("<span>", " it negates all of the text you read.", "</span>"),
       tag("<span>", " it can be downloaded on the ", "</span>"),
       tag(`<a href="${assets.nonono.webstore}" target="_blank">`, "chrome web store", "</a>"),
@@ -129,7 +129,7 @@ const projectIndex = {
       tag("<span>", " is a book of poems.", "</span>")
     ),
     guts: group(
-      [`<a href="${assets.fm.download}" target="_blank"><img src="${assets.fm.img}" width=${WIDTH} /></a>`],
+      [`<a href="${assets.fm.download}" target="_blank"><img src="${assets.fm.img}" width="100%" /></a>`],
       tag("<span>", " it was written in 2013.", "</span>"),
       tag("<span>", " and can be downloaded ", "</span>"),
       tag(`<a href="${assets.fm.download}" target="_blank">`, "here.", "</a>"), ["<br />"]
@@ -297,7 +297,7 @@ const projectIndex = {
       tag("<span>", " is a chrome extension.", "</span>"),
     ),
     guts: group(
-      [`<a href="${assets.ALLCAPS.webstore}" target="_blank"><img src="${assets.ALLCAPS.img}" width=${WIDTH} /></a>`],
+      [`<a href="${assets.ALLCAPS.webstore}" target="_blank"><img src="${assets.ALLCAPS.img}" width="100%" /></a>`],
       tag("<span>", " IT MAKES ALL OF THE TEXT YOU READ CAPITALIZED AND VERY LARGE. IT CAN BE DOWNLOADED ON THE ", "</span>"),
       tag(`<a href="${assets.ALLCAPS.webstore}" target="_blank">`, "CHROME WEB STORE", "</a>"),
       tag("<span>", ". IT WAS CREATED IN 2016.", "</span>"), ["<br />"]
