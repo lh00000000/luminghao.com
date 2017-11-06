@@ -28,3 +28,4 @@ const countsToBag = countLookup =>
 
 // check if you're currently being displayed in an iframe
 const inIFrame = () => window.frameElement ? true : false
+const isMobile = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
