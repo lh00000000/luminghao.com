@@ -163,40 +163,7 @@ const projectIndex = {
       tag('<a href="https://github.com/lh00000000/chatter" target="_blank">', "github", "</a>"),
       tag("<span>", '. ', "</span>"), ["<br />"],
     ),
-    after: () => {
-      let rewriteExample = () => {
-        let getTexts = () =>
-          _($("span:not(:has(:has(*)))"))
-          .map("textContent")
-          .filter(text => !text.startsWith("is a") && !text.startsWith(" is a"))
-          .map(text => text.replace(".", ""))
-          .filter(text => text.length > 0)
-          .value()
-
-        let displayMarkov = (markovText) =>
-          d3.select("#fillMeWithMarkovText")
-            .transition()
-            .ease(EASE)
-            .duration(1000)
-            .call(tweenHtml, d =>
-              tag(
-                i == 0 ? "<samp>🤖: " : "<samp>🤖: ",
-                markovText,
-                "</samp>"
-              )
-            )
-
-        if (!d3.select("#fillMeWithMarkovText").empty()) {
-          displayMarkov(markovSpeak(markovMake(getTexts()), 12))
-        }
-      }
-
-      rewriteExample()
-      setInterval(
-        rewriteExample,
-        5000
-      )
-    }
+    after: rewriteExample
   },
   badly: {
     id: "badly",
