@@ -234,6 +234,8 @@ const projectIndex = {
       [`<div class="centered">${assets.meta.browser}</div>`],
       tag("<span>", " it's source can be found on ", "</span>"),
       tag('<a href="https://github.com/lh00000000/lh00000000.github.io" target="_blank">', "github", "</a>"),
+      tag("<span>", " and can be ", "</span>"),
+      tag('<a href="https://glitch.com/edit/#!/remix/lh00000000" target="_blank">', "remixed on glitch", "</a>"),
       tag("<span>", ". ", "</span>"),
       ["<br />"]
     )
@@ -367,6 +369,5 @@ const orderedProjectDatums = [
   // projectIndex.trie
   // projectIndex.ALLCAPS
   // projectIndex.collective
-
   projectIndex.bio,
 ]
