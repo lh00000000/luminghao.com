@@ -71,7 +71,6 @@ const assets = {
   }
 }
 
-
 const projectIndex = {
   acceptable: {
     id: "acceptable",
@@ -107,7 +106,7 @@ const projectIndex = {
     guts: group(
       [assets.m.iframe],
       tag("<span>", " it won some sort of local competition.", "</span>"),
-      tag("<span>", " the composer was very proud.", "</span>"), ["<br />"]
+      tag("<span>", " the composer was very proud. it was written in 2013.", "</span>"), ["<br />"]
     ),
   },
   kms: {
@@ -161,7 +160,7 @@ const projectIndex = {
       tag("<div id='markovTextHolder'><div id='fillMeWithMarkovText'>", "", "</div></div>"),
       tag("<span>", ' it is implemented in pure python and can be found on ', "</span>"),
       tag('<a href="https://github.com/lh00000000/chatter" target="_blank">', "github", "</a>"),
-      tag("<span>", '. ', "</span>"), ["<br />"],
+      tag("<span>", '. it was written in 2017.', "</span>"), ["<br />"],
     ),
     after: rewriteExample
   },
@@ -176,7 +175,10 @@ const projectIndex = {
       tag("<span>", ' it tweets tracery code which can be used to generate other twitter bots. ', "</span>"),
       tag("<span>", ' the code can be deployed via ', "</span>"),
       tag('<a href="https://cheapbotsdonequick.com/" target="_blank">', "quick bots, done cheap", "</a>"),
-      tag("<span>", '. it was created during itp camp 2017. ', "</span>"), ["<br />"]
+      tag("<span>", '. it was created during ', "</span>"),
+      tag('<a href="https://itp.nyu.edu/camp2017/" target="_blank">', "itp camp 2017", "</a>"),
+      tag("<span>", '. ', "</span>"),
+      ["<br />"]
     ),
     after: () => {
       twttr.widgets.load(document.getElementById("#chatter"))
@@ -226,12 +228,12 @@ const projectIndex = {
       tag("<a href='http://guysamerican.com/' target='_blank'>", "new york", "</a>"),
       tag("<span>", ", where they are employed by ", "</span>"),
       tag("<a href='https://foursquare.com/lh00000000/list/clubmate-nyc' target='_blank'>", "foursquare", "</a>"),
-    tag("<span>", " to create one hyperspecific slack channel a day. ", "</span>"),
+      tag("<span>", " to create one hyperspecific slack channel a day. ", "</span>"),
       tag("<b>", "this website", "</b>"),
-    tag("<span>", " features information about their accomplishments. ", "</span>"),
-      tag("<span>", ': ', "</span>"), [`<div class="centered">${assets.meta.browser}</div>`],
+      tag("<span>", " features information about their accomplishments: ", "</span>"),
+      [`<div class="centered">${assets.meta.browser}</div>`],
       tag("<span>", " it's source can be found on ", "</span>"),
-      tag('<a href="https://github.com/lh00000000/not-on-github-yet" target="_blank">', "github.", "</a>"), ["<br />"]
+      tag('<a href="https://github.com/lh00000000/lh00000000.github.io" target="_blank">', "github.", "</a>"), ["<br />"]
     )
   },
   invisibleCat: {
@@ -242,8 +244,10 @@ const projectIndex = {
     ),
     guts: group(
       [`<div class="centered">${assets.invisibleCat.video}</div>`],
-      tag("<span>", " the breadboard squirts more and more violently unless you find the perfect speed and intensity of petting the air above the circuitry.", "</span>"),
-      tag("<span>", " the.", "</span>"), ["<br />"]
+      tag("<span>", " the breadboard squirts more and more violently unless you find the perfect speed and intensity of petting the air above the circuitry. ", "</span>"),
+      tag("<span>", "it was born in 2017 but quickly achieved a higher form as a ", "</span>"),
+      tag("<a href='https://github.com/lh00000000/InvisibleCat' target='_blank'>", "github repo", "</a>"),
+      ["<br />"]
     ),
     after: () => {
       twttr.widgets.load(document.getElementById("#invisibleCat"))
@@ -257,7 +261,7 @@ const projectIndex = {
     ),
     guts: group(
       ["<br />"],
-      tag("<span>", "it was created and deployed at my job where my manager 'applauded such an egregious creation of a security vulnerability.' ", "</span>"),
+      tag("<span>", "it was created in 2016 and deployed at my job where my manager 'applauded such an egregious creation of a security vulnerability.' ", "</span>"),
       tag("<a href='https://github.com/lh00000000/pyexec-hipbot' target='_blank'>", "deploy it at your company today!", "</a>"), ["<br />"]
     )
   },
@@ -285,7 +289,7 @@ const projectIndex = {
     guts: group(
       tag("<span>", " tries are very fun ", "</span>"),
       tag("<i>", "and", "</i>"),
-      tag("<span>", " useful. it can be found on ", "</span>"),
+      tag("<span>", " useful. it written in 2016 and can be found on ", "</span>"),
       tag('<a href="https://github.com/lh00000000/smol-trie-py" target="_blank">', "github", "</a>"),
       tag("<span>", '. ', "</span>"), ["<br />"],
     )
