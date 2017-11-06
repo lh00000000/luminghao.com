@@ -26,23 +26,6 @@ body {
   background-color: rgb(246,246,246);
 }
 
-ul {
-  list-style-position:inside;
-  margin: 0;
-}
-li {
-  font-size: 0.6em;
-}
-
-/* embed stuff*/
-/*pre code {
-  font-size: 0.8em;
-}
-*/
-blockquote.twitter-tweet, blockquote.twitter-video {
-  font-size: 0.6em;
-}
-
 .project {
   margin-right: .3em;
 }
@@ -52,9 +35,22 @@ blockquote.twitter-tweet, blockquote.twitter-video {
   cursor: pointer;
 }
 
+ul {
+  list-style-position:inside;
+  margin: 0;
+}
+li {
+  font-size: 0.6em;
+}
+
 .centered {
   display: flex;
   justify-content: center;
+}
+
+/* embed stuff*/
+blockquote.twitter-tweet, blockquote.twitter-video {
+  font-size: 0.6em;
 }
 
 .fakeBrowser {
@@ -128,7 +124,6 @@ blockquote.twitter-tweet, blockquote.twitter-video {
   text-align: center;
 }
 
-
 #fillMeWithMarkovText  {
   max-width: 95%;
 }
@@ -138,5 +133,5 @@ blockquote.twitter-tweet, blockquote.twitter-video {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
+
