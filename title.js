@@ -1,7 +1,8 @@
-var i = 0
+
+var titleScrollIdx = 0
 setInterval(() => {
-  i = (i + 1) % orderedProjectDatums.length
-  document.title = _.last(orderedProjectDatums[i].head)
+  titleScrollIdx = (titleScrollIdx + 1) % orderedProjectDatums.length
+  document.title = _.last(orderedProjectDatums[titleScrollIdx].head)
     .replace(/<\/?[^>]+(>|$)/g, "")
     .replace(/\./g, "")
     .match(/is .*/g)
