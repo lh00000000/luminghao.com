@@ -33,3 +33,34 @@ const markovSpeak = (brain, limit) =>
     [_.sample(_.keys(brain).filter(word => _.keys(brain[word]).length > 1))])
     .filter(gram => gram != "_END")
     .join(" ")
+
+let rewriteExample = () => {
+    // _($("span:not(:has(:has(*)))"))
+  let getTexts = () =>
+    _(document.querySelectorAll("span.head"))
+    .map("textContent")
+    .concat(_(document.querySelectorAll("span.guts > span")).map("textContent"))
+    .filter(text => !text.startsWith("is a") && !text.startsWith(" is a"))
+    .map(text => text.replace(".", ""))
+    .filter(text => text.length > 0)
+    .value()
+
+  let displayMarkov = (markovText) =>
+    d3.select("#fillMeWithMarkovText")
+      .transition()
+      .ease(EASE)
+      .duration(1000)
+      .call(tweenHtml, d =>
+        tag(
+          "<samp>🤖: ",
+          markovText,
+          "</samp>"
+        )
+      )
+
+  if (!d3.select("#fillMeWithMarkovText").empty()) {
+    displayMarkov(markovSpeak(markovMake(getTexts()), 8))
+  }
+}
+
+setInterval(rewriteExample, 5000)
