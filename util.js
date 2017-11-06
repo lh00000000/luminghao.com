@@ -12,14 +12,17 @@ const grow = arr =>
   .map(indexSet => indexSet.sort(_.subtract).map(idx => arr[idx]))
 
 
+// i like doing this so i can shove it into chains of nested stuff
 const look = x => {
   console.log(x)
   return x
 }
 
-
+// for making tiny objects. mainly because i couldn't figure out
+// a one liner for making an object if i only knew the property as a string
 const keyval = (...pair) => _.fromPairs([pair])
 
+// {"a": 2, "b": 4} => ["a", "a", "b", "b", "b", "b"]
 const countsToBag = countLookup =>
   _.toPairs(countLookup)
     .reduce((arr, pair) =>
@@ -28,4 +31,6 @@ const countsToBag = countLookup =>
 
 // check if you're currently being displayed in an iframe
 const inIFrame = () => window.frameElement ? true : false
+
+// check if you're running on mobile
 const isMobile = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
