@@ -1,12 +1,40 @@
-const pianoKey = src => {
-  let h = new Howl({
-    src: src
-  })
-
-  return {
-    play: vol => {
-      h.volume(vol)
-      h.play()
+const pianoKey = (src, preload) => {
+  // i can't figure out a good way to deal with the shittiness
+  // of making people on data plans download 15mb of wavs
+  // that all finish loading at the same instant
+  // and end up being played as abrupt maj9/6 chords
+  if (isMobile()) {
+    return {
+      play: _.identity
+    }
+  } else {
+    let h = new Howl({src})
+    return {
+      play: vol => {
+        switch (h.state()) {
+          case "loaded":
+            h.volume(vol)
+            h.play()
+            break
+          case "unloaded":
+            h.load()
+            h.on("load", () => {
+              h.volume(vol)
+              h.play()
+            })
+            break
+          case "loading":
+            let tryToPlayIt = () => {
+              h.volume(vol)
+              h.play()
+            }
+            setTimeout(() => {
+              tryToPlayIt = _.identity
+            }, 250)
+            h.on("load", () => tryToPlayIt())
+            break
+        }
+      }
     }
   }
 }
