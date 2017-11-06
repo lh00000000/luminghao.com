@@ -59,14 +59,14 @@ const assets = {
   },
   meta: {
     browser: `<div class="fakeBrowser">
-    <div class="fakeNavBar">
-        <i onclick="player.RH.forwards()"></i><i onclick="player.RH.backwards()"></i><i onclick="player.LH.backwards()"></i>
-        <input value="${window.location.href}" disabled />
-    </div>
+  <div class="fakeNavBar">
+    <i onclick="player.RH.forwards()"></i><i onclick="player.RH.backwards()"></i><i onclick="player.LH.forwards()"></i>
+    <input value="${window.location.href.split("?")[0]}" disabled />
+  </div>
 
-    <div class="fakeBrowser-container">
-        <iframe id="metaWindow" width="100%" height="100%" src="/"></iframe>
-    </div>
+  <div class="fakeBrowser-container">
+    <iframe id="metaWindow" width="100%" height="100%" src="${window.location.href}?alternateDimension=${_.random(0, 50000)}"></iframe>
+  </div>
 </div>`
   }
 }
