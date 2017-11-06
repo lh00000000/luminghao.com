@@ -41,35 +41,35 @@ const pianoKey = (src, preload) => {
 
 const RH = {
   forwards: {
-    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH%20e%20v3.wav?1509910353045"),
-    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH%20g%20v3.wav?1509910354018"),
-    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH%20a%20v3.wav?1509910352245"),
-    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH%20c%20v3.wav?1509910353060"),
-    d: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH%20d%20v3.wav?1509910354025"),
+    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-e-v4.mp3?1509923751485", true),
+    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-g-v4.mp3?1509923751660", true),
+    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-a-v4.mp3?1509923751050", true),
+    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-c-v4.mp3?1509923751552", true),
+    d: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-d-v4.mp3?1509923751274", true),
   },
   backwards: {
-    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH%20rev%20g%20v3.wav?1509910354776"),
-    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH%20rev%20a%20v3.wav?1509910354988"),
-    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH%20rev%20c%20v3.wav?1509910353800"),
-    d: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH%20rev%20d%20v3.wav?1509910353726"),
-    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH%20rev%20e%20v3.wav?1509910354560"),
+    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-rev-g-v4.mp3?1509923752495", false),
+    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-rev-a-v4.mp3?1509923751784", false),
+    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-rev-c-v4.mp3?1509923752056", false),
+    d: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-rev-d-v4.mp3?1509923752231", false),
+    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-rev-e-v4.mp3?1509923752300", false),
   }
 }
 
 const LH = {
   forwards: {
-    f: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH%20f%20v3.wav?1509908749528"),
-    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH%20g%20v3.wav?1509908756463"),
-    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH%20e%20v3.wav?1509908756422"),
-    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH%20c%20v3.wav?1509908751086"),
-    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH%20a%20v3.wav?1509908745904"),
+    f: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-f-v4.mp3?1509923749956", true),
+    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-g-v4.mp3?1509923750405", true),
+    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-e-v4.mp3?1509923749734", true),
+    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-c-v4.mp3?1509923750197", true),
+    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-a-v4.mp3?1509923750119", true),
   },
   backwards: {
-    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH%20rev%20a%20v3.wav?1509908252118"),
-    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH%20rev%20e%20v3.wav?1509908257760"),
-    f: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH%20rev%20f%20v3.wav?1509908254153"),
-    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLh%20rev%20g%20v3.wav?1509908255415"),
-    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH%20rev%20c%20v3.wav?1509908255431"),
+    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-rev-a-v4.mp3?1509923750349", false),
+    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-rev-e-v4.mp3?1509923750502", false),
+    f: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-rev-f-v4.mp3?1509923750733", false),
+    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLh-rev-g-v4.mp3?1509923750755", false),
+    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-rev-c-v4.mp3?1509923750496", false),
   }
 }
 
@@ -77,7 +77,7 @@ const debouncedPlay = (keyLookup, minVol, maxVol) =>
   _.debounce(
     () => _.sample(_.values(keyLookup))
       .play( _.random(minVol, maxVol)),
-    9
+    8
   )
 
 const player = {
