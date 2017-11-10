@@ -248,7 +248,7 @@ const projectIndex = {
     ),
     guts: group(
       [`<div class="centered">${assets.invisibleCat.video}</div>`],
-      tag("<span>", " the breadboard squirts more and more violently unless you find the perfect speed and intensity of petting the air above the circuitry. ", "</span>"),
+      tag("<span>", " the breadboard squirms more and more violently unless you find the perfect speed and intensity of petting the air above the circuitry. ", "</span>"),
       tag("<span>", "it was born in 2017 but quickly achieved a higher form as a ", "</span>"),
       tag("<a href='https://github.com/lh00000000/InvisibleCat' target='_blank'>", "github repo", "</a>"),
       ["<br />"]
