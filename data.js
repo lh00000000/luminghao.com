@@ -68,6 +68,14 @@ const assets = {
     <iframe id="metaWindow" width="100%" height="100%" src="${window.location.href}?alternateDimension=${_.random(0, 50000)}"></iframe>
   </div>
 </div>`
+  },
+  omegle: {
+    imgs: [
+      'https://raw.githubusercontent.com/lh00000000/omegle-eliza/master/assets/cutey.jpg',
+      'https://raw.githubusercontent.com/lh00000000/omegle-eliza/master/assets/fantasies.jpg',
+      'https://raw.githubusercontent.com/lh00000000/omegle-eliza/master/assets/favor.jpg',
+      'https://raw.githubusercontent.com/lh00000000/omegle-eliza/master/assets/megan.jpg'
+    ]
   }
 }
 
@@ -157,12 +165,11 @@ const projectIndex = {
       tag("<span>", " is a python library for markov chain chatbots.", "</span>")
     ),
     guts: group(
-      tag("<div id='markovTextHolder'><div id='fillMeWithMarkovText'>", "", "</div></div>"),
+      tag("<div id='markovTextHolder'><div id='fillMeWithMarkovText'><samp>", "🤖: hello", "</samp></div></div>"),
       tag("<span>", ' it is implemented in pure python and can be found on ', "</span>"),
       tag('<a href="https://github.com/lh00000000/chatter" target="_blank">', "github", "</a>"),
       tag("<span>", '. it was written in 2017.', "</span>"), ["<br />"],
-    ),
-    after: rewriteExample
+    )
   },
   badly: {
     id: "badly",
@@ -177,8 +184,7 @@ const projectIndex = {
       tag('<a href="https://cheapbotsdonequick.com/" target="_blank">', "quick bots, done cheap", "</a>"),
       tag("<span>", '. it was created during ', "</span>"),
       tag('<a href="https://itp.nyu.edu/camp2017/" target="_blank">', "itp camp 2017", "</a>"),
-      tag("<span>", '. ', "</span>"),
-      ["<br />"]
+      tag("<span>", '. ', "</span>"), ["<br />"]
     ),
     after: () => {
       twttr.widgets.load(document.getElementById("#chatter"))
@@ -219,8 +225,7 @@ const projectIndex = {
         }, {
           text: "the glitch!",
           href: "https://glitch.com/@lh00000000"
-        }
-        ]
+        }]
         .map(_.template('<li><a href="<%= href %>" target="_blank"><%= text %></a></li>'))
         .concat(['<li><a href="mailto:lh00000000@gmail.com">the gmail!</a></li>'])
       ).map(frame => "<ul>" + frame.join("") + "</ul>"),
@@ -230,14 +235,12 @@ const projectIndex = {
       tag("<a href='https://foursquare.com/lh00000000/list/clubmate-nyc' target='_blank'>", "foursquare", "</a>"),
       tag("<span>", " to create one hyperspecific slack channel a day. ", "</span>"),
       tag("<b>", "this website", "</b>"),
-      tag("<span>", " features information about their accomplishments: ", "</span>"),
-      [`<div class="centered">${assets.meta.browser}</div>`],
+      tag("<span>", " features information about their accomplishments: ", "</span>"), [`<div class="centered">${assets.meta.browser}</div>`],
       tag("<span>", " it's source can be found on ", "</span>"),
       tag('<a href="https://github.com/lh00000000/lh00000000.github.io" target="_blank">', "github", "</a>"),
       tag("<span>", " and can be ", "</span>"),
       tag('<a href="https://glitch.com/edit/#!/remix/lh00000000" target="_blank">', "remixed on glitch", "</a>"),
-      tag("<span>", ". ", "</span>"),
-      ["<br />"]
+      tag("<span>", ". ", "</span>"), ["<br />"]
     )
   },
   invisibleCat: {
@@ -250,8 +253,7 @@ const projectIndex = {
       [`<div class="centered">${assets.invisibleCat.video}</div>`],
       tag("<span>", " the breadboard squirms more and more violently unless you find the perfect speed and intensity of petting the air above the circuitry. ", "</span>"),
       tag("<span>", "it was born in 2017 but quickly achieved a higher form as a ", "</span>"),
-      tag("<a href='https://github.com/lh00000000/InvisibleCat' target='_blank'>", "github repo", "</a>"),
-      ["<br />"]
+      tag("<a href='https://github.com/lh00000000/InvisibleCat' target='_blank'>", "github repo", "</a>"), ["<br />"]
     ),
     after: () => {
       twttr.widgets.load(document.getElementById("#invisibleCat"))
@@ -346,7 +348,27 @@ const projectIndex = {
     ),
     guts: group(
       tag("<span>", ' first contact was made in 2016. the results were disappointing. more information can be found on ', "</span>"),
-      tag('<a href="https://github.com/lh00000000/collective_unconscious" target="_blank">', "github", "</a>"),
+      tag('<a href="https://github.com/lh00000000/collective_unconscious" target="_blank">', "github", "</a>"), ["<br />"]
+    )
+  },
+  omegle: {
+    id: "omegle",
+    head: group(
+      tag("<b>", "i'm not sure i understand you fully", "</b>"),
+      tag("<span>", " is a bot chatting with strangers.", "</span>")
+    ),
+    guts: group(
+      [`<a href="https://github.com/lh00000000/omegle-eliza" target="_blank"><img id="omegleImg" src="${_.sample(assets.omegle.imgs)}" width="100%" /></a>`],
+      tag("<span>", " the bot is ", "</span>"),
+      tag('<a href="https://en.wikipedia.org/wiki/ELIZA/" target="_blank">', "ELIZA",'</a>'),
+      tag("<span>", ", a famous psychotherapist. With this ", "</span>"),
+      tag('<a href="https://processing.org/" target="_blank">', "processing",'</a>'),
+      tag("<span>", " program, ELIZA logs on to ", "</span>"),
+      tag('<a href="https://www.omegle.com/" target="_blank">', "omegle.com",'</a>'),
+      tag("<span>", " to do pro-bono sessions for strangers. ", "</span>"),
+      tag("<span>", " in 2015, the source code was uploaded to ", "</span>"),
+      tag('<a href="https://www.omegle.com/" target="_blank">', "github",'</a>'),
+      tag("<span>", ". ", "</span>"),
       ["<br />"]
     )
   }
@@ -360,6 +382,7 @@ const orderedProjectDatums = [
   projectIndex.kms,
   projectIndex.invisibleCat,
   projectIndex.lake,
+  projectIndex.omegle,
   projectIndex.kale,
   // projectIndex.acceptable
   // projectIndex.m
