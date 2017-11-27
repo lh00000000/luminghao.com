@@ -1,6 +1,7 @@
 /* tfw you rewrite/port the whole project while trying to list the project in your portfolio */
 const toGrams = text =>
   text.split(" ")
+  .map(text => text.replace(/[.,\"\']/g, ""))
     .filter(text => text.length > 0)
 
 const toBigrams = grams =>
@@ -35,7 +36,6 @@ const markovSpeak = (brain, limit) =>
     .join(" ")
 
 let rewriteExample = () => {
-    // _($("span:not(:has(:has(*)))"))
   let getTexts = () =>
     _(document.querySelectorAll("span.head"))
     .map("textContent")
