@@ -71,12 +71,10 @@ const update = (datums) => {
     .on("mousedown", d => {
       d3.select("#" + d.id)
         .style("background-color", "black")
-        .style("color", "black")
     })
     .on("mouseup", d => {
       d3.select("#" + d.id)
         .style("background-color", "transparent")
-        .style("color", "inherit")
     })
     .on("click", d => {
 
