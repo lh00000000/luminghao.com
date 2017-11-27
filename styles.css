@@ -26,10 +26,6 @@ body {
   background-color: rgb(246,246,246);
 }
 
-.project {
-  margin-right: .3em;
-}
-
 .head:hover {
   text-decoration: underline;
   cursor: pointer;

@@ -83,70 +83,70 @@ const projectIndex = {
   acceptable: {
     id: "acceptable",
     head: group(
-      tag("<b>", "acceptable ", "</b>"),
-      tag("<span>", " is an album of music.", "</span>")
+      tag("<b>", "acceptable", "</b>"),
+      tag("<span>", " is an album of music. ", "</span>")
     ),
     guts: group(
       [`<div class="centered">${assets.acceptable.iframe}</div>`], ["<br />"],
-      tag("<span>", "it was self-recorded in 2011 in my parents' house.", "</span>"), ["<br />"]
+      tag("<span>", "it was self-recorded in 2011 in my parents' house. ", "</span>"), ["<br />"]
     )
   },
   nonono: {
     id: "nonono",
     head: group(
       tag("<b>", "NO NO NO", "</b>"),
-      tag("<span>", " is a chrome extension.", "</span>")
+      tag("<span>", " is a chrome extension. ", "</span>")
     ),
     guts: group(
       [`<a href="${assets.nonono.webstore}" target="_blank"><img src="${assets.nonono.img}" width="100%" /></a>`],
-      tag("<span>", " it negates all of the text you read.", "</span>"),
+      tag("<span>", " it negates all of the text you read. ", "</span>"),
       tag("<span>", " it can be downloaded on the ", "</span>"),
       tag(`<a href="${assets.nonono.webstore}" target="_blank">`, "chrome web store", "</a>"),
-      tag("<span>", ". it was created in 2017.", "</span>"), ["<br />"]
+      tag("<span>", ". it was created in 2017. ", "</span>"), ["<br />"]
     )
   },
   m: {
     id: "m",
     head: group(
       tag("<b>", "M", "</b>"),
-      tag("<span>", " is a piece for piano and violin.", "</span>")
+      tag("<span>", " is a piece for piano and violin. ", "</span>")
     ),
     guts: group(
       [assets.m.iframe],
-      tag("<span>", " it won some sort of local competition.", "</span>"),
-      tag("<span>", " the composer was very proud. it was written in 2013.", "</span>"), ["<br />"]
+      tag("<span>", " it won some sort of local competition. ", "</span>"),
+      tag("<span>", " the composer was very proud. it was written in 2013. ", "</span>"), ["<br />"]
     ),
   },
   kms: {
     id: "kms",
     head: group(
       tag("<b>", "(((((((())))))))", "</b>"),
-      tag("<span>", " is a piece for orchestra.", "</span>"),
+      tag("<span>", " is a piece for orchestra. ", "</span>"),
     ),
     guts: group(
       [assets.kms.iframe],
-      tag("<span>", " it features way too many violin parts.", "</span>"),
-      tag("<span>", " it was written in 2011.", "</span>"), ["<br />"]
+      tag("<span>", " it features way too many violin parts. ", "</span>"),
+      tag("<span>", " it was written in 2011. ", "</span>"), ["<br />"]
     )
   },
   fm: {
     id: "fm",
     head: group(
       tag("<b>", "fuck me", "</b>"),
-      tag("<span>", " is a book of poems.", "</span>")
+      tag("<span>", " is a book of poems. ", "</span>")
     ),
     guts: group(
       [`<a href="${assets.fm.download}" target="_blank"><img src="${assets.fm.img}" width="100%" /></a>`],
-      tag("<span>", " it was written in 2013.", "</span>"),
+      tag("<span>", " it was written in 2013. ", "</span>"),
       tag("<span>", " and can be downloaded ", "</span>"),
-      tag(`<a href="${assets.fm.download}" target="_blank">`, "here.", "</a>"), ["<br />"]
+      tag(`<a href="${assets.fm.download}" target="_blank">`, "here. ", "</a>"), ["<br />"]
     )
   },
   sandals: {
     id: "sandals",
     head: group(
       tag("<b>", "string quartet", "</b>"),
-      tag("<span>", " is a piece for string quartet.", "</span>")
+      tag("<span>", " is a piece for string quartet. ", "</span>")
     ),
     guts: group(
       [assets.sandals.iframe],
@@ -162,7 +162,7 @@ const projectIndex = {
     id: "chatter",
     head: group(
       tag("<b>", "chatter", "</b>"),
-      tag("<span>", " is a python library for markov chain chatbots.", "</span>")
+      tag("<span>", " is a python library for markov chain chatbots. ", "</span>")
     ),
     guts: group(
       tag("<div id='markovTextHolder'><div id='fillMeWithMarkovText'><samp>", "🤖: hello", "</samp></div></div>"),
@@ -175,7 +175,7 @@ const projectIndex = {
     id: "badly",
     head: group(
       tag("<b>", "bad bots done badly", "</b>"),
-      tag("<span>", " is a twitter bot.", "</span>")
+      tag("<span>", " is a twitter bot. ", "</span>")
     ),
     guts: group(
       ["<br />"], ["<div class='centered'>" + _.sample(assets.badly.tweets) + "</div>"],
@@ -200,7 +200,7 @@ const projectIndex = {
           "an internet user",
           "a lover of keyboard shortcuts",
           "a fan of chamomile tea"
-        ]) + ".",
+        ]) + ". ",
         "</span>")
     ),
     guts: group(
@@ -247,7 +247,7 @@ const projectIndex = {
     id: "invisibleCat",
     head: group(
       tag("<b>", "invisible cat", "</b>"),
-      tag("<span>", " is an arduino taped to a breadboard.", "</span>"),
+      tag("<span>", " is an arduino taped to a breadboard. ", "</span>"),
     ),
     guts: group(
       [`<div class="centered">${assets.invisibleCat.video}</div>`],
@@ -263,7 +263,7 @@ const projectIndex = {
     id: "pyexec",
     head: group(
       tag("<b>", "pyexec hipbot", "</b>"),
-      tag("<span>", " is a hipchatbot that executes python.", "</span>"),
+      tag("<span>", " is a hipchatbot that executes python. ", "</span>"),
     ),
     guts: group(
       ["<br />"],
@@ -275,7 +275,7 @@ const projectIndex = {
     id: "kale",
     head: group(
       tag("<b>", "kale in dinoland ost", "</b>"),
-      tag("<span>", " is a soundtrack.", "</span>"),
+      tag("<span>", " is a soundtrack. ", "</span>"),
     ),
     guts: group(
       [`<div class="centered">${assets.kale.embed}</div>`],
@@ -283,14 +283,14 @@ const projectIndex = {
       tag("<a href='http://kaleindinoland.com/' target='_blank'>", "Kale in Dinoland", "</a>"),
       tag("<span>", " using ", "</span>"),
       tag("<a href='http://www.littlesounddj.com/lsd/' target='_blank'>", "LSDj", "</a>"),
-      tag("<span>", ".", "</span>"), ["<br />"]
+      tag("<span>", ". ", "</span>"), ["<br />"]
     )
   },
   trie: {
     id: "trie",
     head: group(
       tag("<b>", "smol trie py", "</b>"),
-      tag("<span>", " is a python library for a trie.", "</span>"),
+      tag("<span>", " is a python library for a trie. ", "</span>"),
     ),
     guts: group(
       tag("<span>", " tries are very fun ", "</span>"),
@@ -304,20 +304,20 @@ const projectIndex = {
     id: "ALLCAPS",
     head: group(
       tag("<b>", "ALLCAPS", "</b>"),
-      tag("<span>", " is a chrome extension.", "</span>"),
+      tag("<span>", " is a chrome extension. ", "</span>"),
     ),
     guts: group(
       [`<a href="${assets.ALLCAPS.webstore}" target="_blank"><img src="${assets.ALLCAPS.img}" width="100%" /></a>`],
       tag("<span>", " IT MAKES ALL OF THE TEXT YOU READ CAPITALIZED AND VERY LARGE. IT CAN BE DOWNLOADED ON THE ", "</span>"),
       tag(`<a href="${assets.ALLCAPS.webstore}" target="_blank">`, "CHROME WEB STORE", "</a>"),
-      tag("<span>", ". IT WAS CREATED IN 2016.", "</span>"), ["<br />"]
+      tag("<span>", ". IT WAS CREATED IN 2016. ", "</span>"), ["<br />"]
     )
   },
   lake: {
     id: "lake",
     head: group(
       tag("<b>", "lake michigan", "</b>"),
-      tag("<span>", " is a song cycle.", "</span>")
+      tag("<span>", " is a song cycle. ", "</span>")
     ),
     guts: group(
       [assets.lake.iframe],
@@ -333,7 +333,7 @@ const projectIndex = {
     id: "kidding",
     head: group(
       tag("<b>", "just kidding", "</b>"),
-      tag("<span>", " is a piece for brass quintet.", "</span>")
+      tag("<span>", " is a piece for brass quintet. ", "</span>")
     ),
     guts: group(
       [assets.kidding.iframe],
@@ -344,7 +344,7 @@ const projectIndex = {
     id: "collective",
     head: group(
       tag("<b>", "collective_unconscious", "</b>"),
-      tag("<span>", " is a python library for interacting with the collective unconscious.", "</span>")
+      tag("<span>", " is a python library for interacting with the collective unconscious. ", "</span>")
     ),
     guts: group(
       tag("<span>", ' first contact was made in 2016. the results were disappointing. more information can be found on ', "</span>"),
@@ -355,7 +355,7 @@ const projectIndex = {
     id: "omegle",
     head: group(
       tag("<b>", "i'm not sure i understand you fully", "</b>"),
-      tag("<span>", " is a bot chatting with strangers.", "</span>")
+      tag("<span>", " is a bot that chats with strangers. ", "</span>")
     ),
     guts: group(
       [`<a href="https://github.com/lh00000000/omegle-eliza" target="_blank"><img id="omegleImg" src="${_.sample(assets.omegle.imgs)}" width="100%" /></a>`],
