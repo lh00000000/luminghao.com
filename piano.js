@@ -41,35 +41,35 @@ const pianoKey = (src, preload) => {
 
 const RH = {
   forwards: {
-    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-e-v4.mp3?1509923751485", true),
-    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-g-v4.mp3?1509923751660", true),
-    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-a-v4.mp3?1509923751050", true),
-    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-c-v4.mp3?1509923751552", true),
-    d: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-d-v4.mp3?1509923751274", true),
+    e: pianoKey("https://s3.amazonaws.com/lh00000000-public/for-RH-e-v4.mp3", true),
+    g: pianoKey("https://s3.amazonaws.com/lh00000000-public/for-RH-g-v4.mp3", true),
+    a: pianoKey("https://s3.amazonaws.com/lh00000000-public/for-RH-a-v4.mp3", true),
+    c: pianoKey("https://s3.amazonaws.com/lh00000000-public/for-RH-c-v4.mp3", true),
+    d: pianoKey("https://s3.amazonaws.com/lh00000000-public/for-RH-d-v4.mp3", true),
   },
   backwards: {
-    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-rev-g-v4.mp3?1509923752495", false),
-    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-rev-a-v4.mp3?1509923751784", false),
-    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-rev-c-v4.mp3?1509923752056", false),
-    d: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-rev-d-v4.mp3?1509923752231", false),
-    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FRH-rev-e-v4.mp3?1509923752300", false),
+    g: pianoKey("https://s3.amazonaws.com/lh00000000-public/rev-RH-g-v4.mp3", false),
+    a: pianoKey("https://s3.amazonaws.com/lh00000000-public/rev-RH-a-v4.mp3", false),
+    c: pianoKey("https://s3.amazonaws.com/lh00000000-public/rev-RH-c-v4.mp3", false),
+    d: pianoKey("https://s3.amazonaws.com/lh00000000-public/rev-RH-d-v4.mp3", false),
+    e: pianoKey("https://s3.amazonaws.com/lh00000000-public/rev-RH-e-v4.mp3", false),
   }
 }
 
 const LH = {
   forwards: {
-    f: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-f-v4.mp3?1509923749956", true),
-    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-g-v4.mp3?1509923750405", true),
-    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-e-v4.mp3?1509923749734", true),
-    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-c-v4.mp3?1509923750197", true),
-    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-a-v4.mp3?1509923750119", true),
+    f: pianoKey("https://s3.amazonaws.com/lh00000000-public/for-LH-f-v4.mp3", true),
+    g: pianoKey("https://s3.amazonaws.com/lh00000000-public/for-LH-g-v4.mp3", true),
+    e: pianoKey("https://s3.amazonaws.com/lh00000000-public/for-LH-e-v4.mp3", true),
+    c: pianoKey("https://s3.amazonaws.com/lh00000000-public/for-LH-c-v4.mp3", true),
+    a: pianoKey("https://s3.amazonaws.com/lh00000000-public/for-LH-a-v4.mp3", true),
   },
   backwards: {
-    a: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-rev-a-v4.mp3?1509923750349", false),
-    e: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-rev-e-v4.mp3?1509923750502", false),
-    f: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-rev-f-v4.mp3?1509923750733", false),
-    g: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLh-rev-g-v4.mp3?1509923750755", false),
-    c: pianoKey("https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FLH-rev-c-v4.mp3?1509923750496", false),
+    a: pianoKey("https://s3.amazonaws.com/lh00000000-public/rev-LH-a-v4.mp3", false),
+    e: pianoKey("https://s3.amazonaws.com/lh00000000-public/rev-LH-e-v4.mp3", false),
+    f: pianoKey("https://s3.amazonaws.com/lh00000000-public/rev-LH-f-v4.mp3", false),
+    g: pianoKey("https://s3.amazonaws.com/lh00000000-public/rev-LH-g-v4.mp3", false),
+    c: pianoKey("https://s3.amazonaws.com/lh00000000-public/rev-LH-c-v4.mp3", false),
   }
 }
 

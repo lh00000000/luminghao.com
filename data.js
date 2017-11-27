@@ -24,7 +24,7 @@ const assets = {
     iframe: '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/132641135&amp;color=%23a1a1a1&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>'
   },
   fm: {
-    img: 'https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FScreen%20Shot%202017-10-29%20at%209.00.34%20PM.png?1509325465090',
+    img: 'https://s3.amazonaws.com/lh00000000-public/fm-cover.png',
     download: 'https://s3-us-west-2.amazonaws.com/lh00000000-misc/PUBLIC/Fuck+Me.pdf'
   },
   badly: {
@@ -38,7 +38,7 @@ const assets = {
     embed: '<script src="https://gist.github.com/lh00000000/2265eda569a10fcf6647d020be28bd53.js"></script>'
   },
   nonono: {
-    img: 'https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2FscreenshotPNG.png?1509422640544',
+    img: 'https://s3.amazonaws.com/lh00000000-public/nonono-screenshot.png',
     webstore: 'https://chrome.google.com/webstore/detail/no-no-no/nggpkbejpjoikollcocnfahnghbcihlk'
   },
   invisibleCat: {
@@ -48,7 +48,7 @@ const assets = {
     embed: '<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=2007724265/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/transparent=true/" seamless><a href="http://therottingcartridge.bandcamp.com/album/kale-in-dinoland-soundtrack">Kale in Dinoland Soundtrack by The Rotting Cartridge</a></iframe>'
   },
   ALLCAPS: {
-    img: 'https://cdn.glitch.com/56ee8ee2-f735-4d34-9cfe-387d8a3aded6%2Funnamed.jpg?1509495968703',
+    img: 'https://s3.amazonaws.com/lh00000000-public/allcaps-screenshot.jpg',
     webstore: 'https://chrome.google.com/webstore/detail/ALLCAPS/phaohlfaifkplhknhfeifaonmoodndip'
   },
   lake: {
