@@ -1,6 +1,11 @@
-const tick = (id, slides) =>
-	document.querySelector(id).src =
-		slides[(slides.indexOf(document.querySelector(id).src) + 1) % slides.length]
+const tick = (id, slides) => {
+  let ele = document.querySelector(id)
+  if (ele) {
+    let currentSlideIdx = slides.indexOf(ele.src)
+    ele.src = slides[(currentSlideIdx + 1) % slides.length]
+  }
+}
+
 
 setInterval(
 	() => tick("#omegleImg", assets.omegle.imgs),
