@@ -220,6 +220,9 @@ const projectIndex = {
           text: "the soundcloud!",
           href: "https://soundcloud.com/stardotdotdot"
         }, {
+          text: "the mastodon!",
+          href: "https://mastodon.social/@lh00000000"
+        }, {
           text: "the are.na!",
           href: "https://www.are.na/luming-hao"
         }, {
