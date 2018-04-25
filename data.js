@@ -326,7 +326,7 @@ const projectIndex = {
       [assets.lake.iframe],
       tag("<span>", ' it utilizes text by ', "</span>"),
       tag('<a href="http://steveroggenbuck.com/">', 'steve roggenbuck', "</a>"),
-      tag("<span>", ', wemberly schuirman, and fatherxmas. "', "</span>"),
+      tag("<span>", ', wemberly schüirmann, and fatherxmas. "', "</span>"),
     )
   },
   kidding: {
