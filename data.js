@@ -324,12 +324,9 @@ const projectIndex = {
     ),
     guts: group(
       [assets.lake.iframe],
-      tag("<span>", ' it was inspired by a song my friends wrote called "', "</span>"),
-      tag(
-        '<a href="https://unclebusiness.bandcamp.com/track/thats-what-you-get-for-wearing-sandals-on-christmas-you-asshole" target="_blank">',
-        "That's What You Get For Wearing Sandals On Christmas You Asshole",
-        "</a>"),
-      tag("<span>", '". it was written in 2010.', "</span>"), ["<br />"]
+      tag("<span>", ' it utilizes text by ', "</span>"),
+      tag('<a href="http://steveroggenbuck.com/">', 'steve roggenbuck', "</a>"),
+      tag("<span>", ', wemberly schuirman, and fatherxmas. "', "</span>"),
     )
   },
   kidding: {
